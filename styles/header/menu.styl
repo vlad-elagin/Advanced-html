@@ -1,0 +1,27 @@
+$bg = #202020
+
+nav.menu
+  display flex
+  flex-flow column nowrap
+  align-items center
+  padding-top 30px
+  height 660px
+  width 90px
+  position relative
+  background-color $bg
+
+  &:after
+    content ''
+    position absolute
+    bottom 0
+    right 0
+    height 10px
+    width 90px
+    border-left 45px solid transparent
+    border-top 5px solid transparent
+    border-right 45px solid white
+    border-bottom 5px solid white
+
+  .logo-link
+    img
+      width 55px

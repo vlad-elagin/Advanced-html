@@ -42,7 +42,7 @@ gulp.task('html', function() {
 // дефолтный таск
 gulp.task('default', ['styles', 'html'], function() {
 	// следим за изменениями в файлах стилей и запускаем таск обработки
-  gulp.watch('styles/*.styl', ['styles']);
+  gulp.watch('styles/**/*.styl', ['styles']);
 	// то же самое для html
 	gulp.watch('./*.html', ['html']);
 
