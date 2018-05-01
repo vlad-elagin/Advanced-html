@@ -1,18 +1,19 @@
 body
   margin 0
   padding 0
-  width 100%
-  min-width 1400px
 
-  background url(images/bg.jpg) center center no-repeat
-  background-size cover
+  overflow-x hidden
 
-  perspective 1px
-  overflow-y auto
-  position relative
+  .container
+    width 100vw
+    height 100vh
+    min-width 1400px
 
-  // temp
-  height: 4000px;
+    background url(images/bg.jpg) center center no-repeat
+    background-size cover
+
+    // temp
+    height: 4000px;
 
 *
 *:before
@@ -24,5 +25,3 @@ body
 @import './header/header';
 @import './header/menu';
 @import './header/social';
-
-@import './heading';
