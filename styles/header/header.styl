@@ -1,4 +1,47 @@
 header
-  height 420px
-  outline 1px solid black
   position relative
+
+  display flex
+  align-items flex-start
+
+  .bag
+    position absolute
+    display block
+    right 15px
+    top 40px
+    cursor pointer
+    transform-origin 50% 50%
+    transition transform .3s ease
+
+    &:hover
+      transform scale(1.1)
+
+    svg
+      width 25px
+      height 25px
+
+    &-amount
+      position absolute
+      top 1px
+      right -3px
+      display block
+      height 15px
+      width 15px
+      background-color #648cff
+      border-radius 50%
+      line-height 15px
+      color white
+      font-family 'BebasNeune'
+      font-size 11px
+      text-align center
+
+  .bg-wrapper
+    display block
+    background linear-gradient(to bottom, rgba(#ff5a71, 0.9), rgba(#ff5a71, 0.9)),
+               url(images/header-bg.jpg)
+    background-size cover
+
+    width 760px
+    height 810px
+
+    clip-path polygon(0% 0%, 100% 0%, 92% 100%, 0% 95%)

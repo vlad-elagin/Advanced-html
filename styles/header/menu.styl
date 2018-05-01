@@ -13,17 +13,7 @@ nav.menu
   position relative
   background-color $bg
 
-  &:after
-    content ''
-    position absolute
-    bottom 0
-    right 0
-    height 10px
-    width 90px
-    border-left 45px solid transparent
-    border-top 5px solid transparent
-    border-right 45px solid white
-    border-bottom 5px solid white
+  clip-path polygon(0% 0%, 100% 0%, 100% 98%, 0% 100%)
 
   .logo-link
     width 55px
