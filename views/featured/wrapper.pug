@@ -1,0 +1,12 @@
+include product.pug
+
+.featured-products
+
+  include ./controls.pug
+
+  include ./allProducts.pug
+
+  .products
+    +product('type-1', 'yellow', 'immunity twist')
+    +product('type-2', 'green', 'green balance')
+    +product('type-1', 'red', 'sweet queen')
