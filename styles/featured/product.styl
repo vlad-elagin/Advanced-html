@@ -2,6 +2,8 @@ $color-yellow = #ffdb4a
 $color-green = #95da61
 $color-red = #ff5854
 
+$color-black = #323232
+
 .product-wrapper
   height 425px
 
@@ -17,7 +19,7 @@ $color-red = #ff5854
 
     width 2px
     height 75px
-    background-color black
+    background-color $color-black
 
   // fancy shaped background
   &:after
@@ -26,12 +28,14 @@ $color-red = #ff5854
     z-index 1
 
 
-  // ==== shapes ====
-  &.shape-type-1
+  // ==== shape ====
+  &.shape
     width 495px
+    transition width .3s ease
 
     &:before
       left 135px
+      transition left .3s ease
 
     &:after
       width 370px
@@ -47,10 +51,16 @@ $color-red = #ff5854
         0 400px
       )
 
-    h2
-      top 130px
+      transition all .3s ease
 
-  &.shape-type-2
+    .text-wrapper
+      transition all .3s ease
+      top 130px
+      right 0
+
+  // ==== hovered shape ====
+  &.active
+  &:not(.active):hover
     width 515px
     margin-right 20px
 
@@ -71,93 +81,25 @@ $color-red = #ff5854
         0 408px
       )
 
+    .text-wrapper
+      top 105px
+      right -25px
+
+
   // ==== colors ====
   &.color-yellow
     &:after
       background-color $color-yellow
-    .image-wrapper
-      &:before
-        border-color lighten($color-yellow, 30%)
-      img
-        box-shadow 0 0 0 7px rgba($color-yellow, 0.5),
-                   20px 0 40px 0px rgba(black, 0.6)
 
   &.color-green
     &:after
       background-color $color-green
-    .image-wrapper
-      &:before
-        border-color lighten($color-green, 30%)
-      img
-        box-shadow 0 0 0 7px rgba($color-green, 0.5),
-                   20px 0 40px 0px rgba(black, 0.6)
 
   &.color-red
     &:after
       background-color $color-red
-    .image-wrapper
-      &:before
-        border-color lighten($color-red, 30%)
-      img
-        box-shadow 0 0 0 7px rgba($color-red, 0.5),
-                   20px 0 40px 0px rgba(black, 0.6)
 
-  // ==== cocktail image ====
-  .image-wrapper
-    position absolute
-    z-index 3
-
-    left -5px
-    top 92px
-
-    width 300px
-    height 300px
-
-    // circle
-    &:before
-      content ''
-      position absolute
-      z-index 3
-      left 0
-      right 0
-      top 0
-      bottom 0
-
-      width 100%
-      height 100%
-
-      border-radius 50%
-      border-width 1px
-      border-style solid
-
-    img
-      position absolute
-      z-index 2
-      left 50%
-      top 50%
-      transform translate(-50%, -50%)
-
-      width 260px
-      height 260px
-
-      border-radius 50%
-
-  h2
-    position absolute
-    z-index 3
-
-    right 0
-
-    width 200px
-    margin 0
-
-    font-family 'HalisR'
-    font-weight 800
-    text-transform uppercase
-    font-size 36px
-    line-height 40px
-
-
-
-
-  outline 1px solid blue
+  // ==== active effect ====
+  &.active
+    .energy-value
+      display flex

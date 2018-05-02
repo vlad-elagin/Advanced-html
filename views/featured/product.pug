@@ -1,6 +1,12 @@
-mixin product(shape, color, heading, description, fat, carbs, prot, kj, kcal)
-  div(class="product-wrapper color-" + color + " shape-" + shape)
-    .image-wrapper
-      img(src="images/cocktails/cocktail-" + color + ".jpg")
+include ./smoothie.pug
+include ./energyValue.pug
+
+mixin product(active, shape, color, heading, description, kj, kcal, fat, carbs, prot)
+  div(class="product-wrapper color-" + color + " shape " + active)
+    +smoothie(active, color)
     
-    h2= heading
+    .text-wrapper
+      h2= heading
+      p= description
+
+    +energyValue(kj, kcal)

@@ -7,6 +7,30 @@ include product.pug
   include ./allProducts.pug
 
   .products
-    +product('type-1', 'yellow', 'immunity twist')
-    +product('type-2', 'green', 'green balance')
-    +product('type-1', 'red', 'sweet queen')
+    +product(
+      '',
+      'type-1',
+      'yellow',
+      'immunity twist',
+      'Passion fruit, apple, ginger',
+      '123',
+      '321'
+    )
+    +product(
+      'active',
+      'type-2',
+      'green',
+      'green balance',
+      'Cucumber, kale, broccoli, lemon',
+      '632',
+      '151'
+    )
+    +product(
+      '',
+      'type-1',
+      'red',
+      'sweet queen',
+      'Strawberry, elderflower, banana',
+      '555',
+      '666'
+    )

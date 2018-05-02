@@ -1,0 +1,57 @@
+$color-yellow = #ffdb4a
+$color-green = #95da61
+$color-red = #ff5854
+
+$color-black = #323232
+
+.energy-value
+  // controlled by product.styl
+  display none
+  flex-flow column nowrap
+  justify-content flex-start
+  align-items center
+
+  position absolute
+  z-index 3
+
+  height 100px
+  width 80px
+
+  bottom 60px
+  right 95px
+
+  .kj
+  .kcal
+    width 80px
+    height 25px
+    border-radius 12px
+    background-color red
+
+    text-align center
+    line-height 30px
+    font-family 'OratorStd'
+    font-size 13px
+    letter-spacing -1px
+
+  .kj
+    background $color-black
+    margin-bottom 10px
+
+  .kcal
+    background white
+    color $color-black
+    margin-bottom 20px
+
+  span
+    font-family 'HalisR'
+    font-size 9px
+    text-align center
+
+  // ==== colors ====
+.product-wrapper
+  &.color-yellow .kj
+    color $color-yellow
+  &.color-green .kj
+    color $color-green
+  &.color-red .kj
+    color $color-red
