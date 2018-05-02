@@ -1,0 +1,47 @@
+$bg = #202020
+
+$link-color = #4d4c4c
+$link-color-hovered = #fff
+
+.toggled-menu
+  position absolute
+  z-index 1
+  width 200px
+  max-width 0
+  overflow hidden
+  transition max-width .3s ease
+  height 650px
+
+  left 100%
+  top 0
+
+  display flex
+  flex-flow column nowrap
+  align-items flex-start
+
+  background-color $bg
+  clip-path polygon(0% 0%, 200px 0%, 200px 96.5%, 0% 100%)
+
+  padding-top 145px
+
+  ul
+    list-style none
+    display flex
+    flex-flow column nowrap
+    justify-content space-between
+    width 200px
+    padding-left 15px
+    margin-top 0
+
+    &:not(:last-of-type)
+      margin-bottom 55px
+
+    li a
+      color $link-color
+      text-decoration none
+      transition color .3s ease
+      font-family 'OratorSTD'
+      font-size 10px
+      text-transform uppercase
+      &:hover
+        color $link-color-hovered

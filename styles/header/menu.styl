@@ -8,12 +8,20 @@ nav.menu
   flex-flow column nowrap
   align-items center
   padding-top 30px
-  height 660px
+  height 650px
   width 90px
   position relative
   background-color $bg
 
-  clip-path polygon(0% 0%, 100% 0%, 100% 98%, 0% 100%)
+  &:after
+    content ''
+    position absolute
+    top 100%
+    left 0
+    height 10px
+    width 90px
+    background-color $bg
+    clip-path polygon(0% 0%, 100% 0%, 0 100%, 0% 100%)
 
   .logo-link
     width 55px
@@ -68,7 +76,7 @@ nav.menu
     position absolute
     width 25px
     height 25px
-    bottom 35px
+    bottom 25px
 
     background: linear-gradient(
       to bottom,
@@ -78,3 +86,7 @@ nav.menu
       transparent 57.6%, transparent 84%,
       white 85%, white
     )
+
+  &.opened
+    .toggled-menu
+      max-width 200px
