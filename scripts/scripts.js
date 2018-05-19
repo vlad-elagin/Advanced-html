@@ -20,8 +20,10 @@ function pickSmoothie(index) {
   var smoothie = document.querySelectorAll('.featured-products .product-wrapper')[index];
   smoothie.classList.add('active');
 
+  var positions = [340, 0, -340]
+
   var wrapper = document.querySelector('.featured-products .products');
-  wrapper.style.left = (index + 1) * 340 + 'px';
+  wrapper.style.transform = 'translateX(' + positions[index] + 'px)';
 
   current = index;
   counter.textContent = current;

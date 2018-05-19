@@ -9,6 +9,12 @@ $color-black = #323232
 
   position relative
 
+  &:first-of-type
+    margin-right 22px
+
+  &:nth-of-type(2)
+    margin-right 55px
+
   // black line
   &:before
     content ''
@@ -60,7 +66,7 @@ $color-black = #323232
 
   // ==== hovered shape ====
   &.active
-  &:not(.active):hover
+  //&:not(.active):hover
     width 515px
     margin-right 20px
 
