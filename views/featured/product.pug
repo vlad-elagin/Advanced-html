@@ -3,7 +3,7 @@ include ./energyValue.pug
 
 mixin product(active, shape, color, heading, description, kj, kcal, fat, carbs, prot)
   div(class="product-wrapper color-" + color + " shape " + active)
-    +smoothie(active, color)
+    +smoothie(active, color, fat, carbs, prot)
     
     .text-wrapper
       h2= heading

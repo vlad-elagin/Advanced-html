@@ -1,3 +1,9 @@
-mixin smoothie(active, color)
+include ./nutrients.pug
+
+mixin smoothie(active, color, fat, carbs, prot)
   .image-wrapper
     img(src="images/cocktails/cocktail-" + color + ".jpg")
+      
+    +nutrients(color, fat, carbs, prot)
+
+  
