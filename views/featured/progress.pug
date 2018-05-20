@@ -1,0 +1,28 @@
+mixin progress(color)
+  svg(
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="350px"
+    height="350px"
+    viewBox="0 0 350 350"
+    class="progress-bar color-" + color
+  )
+    circle.progress-bar-background(
+      cx="175"
+      cy="175"
+      r="157"
+    )
+
+    circle.progress-bar-progress(
+      cx="175"
+      cy="175"
+      r="157"
+    )
+    
+    circle.progress-bar-shadow(
+      cx="175"
+      cy="175"
+      r="169"
+    )
+    

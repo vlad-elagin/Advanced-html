@@ -1,4 +1,5 @@
 include ./nutrients.pug
+include ./progress.pug
 
 mixin smoothie(active, color, fat, carbs, prot)
   .image-wrapper
@@ -6,4 +7,4 @@ mixin smoothie(active, color, fat, carbs, prot)
       
     +nutrients(color, fat, carbs, prot)
 
-  
+    +progress(color)
