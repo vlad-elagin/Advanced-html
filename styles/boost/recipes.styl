@@ -1,0 +1,48 @@
+.recipes-wrapper
+  width 280px
+  height 465px
+
+  display flex
+  flex-direction column
+
+  .recipe
+    height 33.3%
+    position relative
+    cursor pointer
+
+    clip-path polygon(
+      0 0,
+      100% 0,
+      100% 200px,
+      0 200px
+    )
+    transition all .3s ease
+
+    h4
+      position absolute
+      margin 0
+      left 30px
+      bottom 15px
+
+      font-family 'HalisR'
+      font-weight 900
+      color white
+      font-size 24px
+      letter-spacing -1px
+
+    img
+      width 100%
+
+    // fix for bad image source
+    &:last-of-type
+      img
+        height 100%
+
+    &:hover
+      transform scale(1.15)
+      clip-path polygon(
+        0 0,
+        100% 10px,
+        95% 200px,
+        10px 200px
+      )
