@@ -11,7 +11,6 @@ $color-pb-yellow-shadow = rgba($color-pb-yellow, 0.3)
 $color-pb-yellow-progress = lighten($color-yellow, 90%)
 
 .progress-bar
-  display none
 
   position absolute
   left 50%
@@ -19,7 +18,8 @@ $color-pb-yellow-progress = lighten($color-yellow, 90%)
   transform translate(-50%, -50%)
 
   &-background
-    stroke-width 15px
+    transform stroke-width .5s ease
+    stroke-width 1px
     fill none
 
   &-progress
@@ -27,18 +27,19 @@ $color-pb-yellow-progress = lighten($color-yellow, 90%)
     transform rotate(-90deg)
     transform-origin center
 
-    stroke-width 15px
+    stroke-width 0px
     fill none
 
     stroke-dasharray 1000px
 
     animation-duration 1s
     animation-timing-function ease
-    animation-fill-mode forwards
+    animation-fill-mode both
+    animation-delay .5s
 
   &-shadow
-    stroke green
-    stroke-width 10px
+    stroke-width 0px
+    transform stroke-width .3s ease .5s
     fill none
 
   // colors
@@ -49,12 +50,6 @@ $color-pb-yellow-progress = lighten($color-yellow, 90%)
       stroke $color-pb-green-shadow
     .progress-bar-progress
       stroke $color-pb-green-progress
-      @keyframes progress-green
-        from
-          stroke-dashoffset 1000px
-        to
-          stroke-dashoffset 550px
-      animation-name progress-green
 
   &.color-red
     .progress-bar-background
@@ -63,12 +58,6 @@ $color-pb-yellow-progress = lighten($color-yellow, 90%)
       stroke $color-pb-red-shadow
     .progress-bar-progress
       stroke $color-pb-red-progress
-      @keyframes progress-red
-        from
-          stroke-dashoffset 1000px
-        to
-          stroke-dashoffset 350px
-      animation-name progress-red
 
   &.color-yellow
     .progress-bar-background
@@ -77,13 +66,37 @@ $color-pb-yellow-progress = lighten($color-yellow, 90%)
       stroke $color-pb-yellow-shadow
     .progress-bar-progress
       stroke $color-pb-yellow-progress
-      @keyframes progress-yellow
-        from
-          stroke-dashoffset 1000px
-        to
-          stroke-dashoffset 830px
-      animation-name progress-yellow
 
+.product-wrapper.active
+  .progress-bar
+    display block
+    &-background
+      stroke-width 15px
+    &-progress
+      stroke-width 15px
+    &-shadow
+      stroke-width 10px
 
-.product-wrapper.active .progress-bar
-  display block
+  &.color-yellow .progress-bar-progress
+    @keyframes progress-yellow
+      from
+        stroke-dashoffset 1000px
+      to
+        stroke-dashoffset 830px
+    animation-name progress-yellow
+
+  &.color-green .progress-bar-progress
+    @keyframes progress-green
+      from
+        stroke-dashoffset 1000px
+      to
+        stroke-dashoffset 550px
+    animation-name progress-green
+
+  &.color-red .progress-bar-progress
+    @keyframes progress-red
+      from
+        stroke-dashoffset 1000px
+      to
+        stroke-dashoffset 350px
+    animation-name progress-red
