@@ -48,3 +48,9 @@ setTimeout(function() {
     node.classList.add('loaded');
   });
 }, 400);
+
+// scroll to top on footer logo click
+var logo = document.querySelector('footer .logo');
+logo.addEventListener('click', function () {
+  document.documentElement.scrollTop = 0;
+});
