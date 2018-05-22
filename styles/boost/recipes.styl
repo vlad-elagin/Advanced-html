@@ -10,6 +10,9 @@
     position relative
     cursor pointer
 
+    // hide badly cut images
+    overflow hidden
+
     clip-path polygon(
       0 0,
       100% 0,
@@ -17,6 +20,41 @@
       0 200px
     )
     transition all .3s ease
+
+    @keyframes fade-out
+      0%
+        z-index 2
+        transform scale(1.15)
+        clip-path polygon(
+          0 0,
+          100% 10px,
+          95% 200px,
+          10px 200px
+        )
+      1%
+        z-index 1
+      99%
+        z-index 1
+        transform scale(1)
+        clip-path polygon(
+          0 0,
+          100% 0,
+          100% 200px,
+          0 200px
+        )
+      100%
+        z-index auto
+
+    animation-name fade-out
+    animation-duration .3s
+    animation-timing-function ease
+    animation-fill-mode forwards
+    opacity 0
+
+    &.loaded
+      // display node after initial animation played
+      // yes, i know it is kostyl
+      opacity 1
 
     h4
       position absolute
@@ -39,10 +77,23 @@
         height 100%
 
     &:hover
-      transform scale(1.15)
-      clip-path polygon(
-        0 0,
-        100% 10px,
-        95% 200px,
-        10px 200px
-      )
+      @keyframes fade-in
+        from
+          z-index 2
+          transform scale(1)
+          clip-path polygon(
+            0 0,
+            100% 0,
+            100% 200px,
+            0 200px
+          )
+        to
+          z-index 2
+          transform scale(1.15)
+          clip-path polygon(
+            0 0,
+            100% 10px,
+            95% 200px,
+            10px 200px
+          )
+      animation-name fade-in

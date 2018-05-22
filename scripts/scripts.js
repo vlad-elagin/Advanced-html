@@ -33,10 +33,18 @@ leftBtn.addEventListener('click', function(e) {
   e.preventDefault();
   if (current - 1 === -1) return;
   pickSmoothie(current - 1);
-})
+});
 
 rightBtn.addEventListener('click', function(e) {
   e.preventDefault();
   if (current + 1 === 3) return;
   pickSmoothie(current + 1);
-})
+});
+
+// display recipes after animation playes
+var recipes = document.querySelectorAll('.recipe');
+setTimeout(function() {
+  recipes.forEach(function(node) {
+    node.classList.add('loaded');
+  });
+}, 400);
