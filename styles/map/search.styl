@@ -1,0 +1,70 @@
+.search
+  // temp
+  outline 1px solid green
+  background-color $search-bg
+
+  position absolute
+  top 40px
+  height 810px
+  width 100%
+  clip-path polygon(
+    0 0,
+    100% 70px,
+    100% 100%,
+    0 100%
+  )
+
+  form
+
+    display block
+    position absolute
+    right 215px
+    top 210px
+
+    height 40px
+    width 290px
+
+    input
+      width 100%
+      height 100%
+
+      background-color transparent
+      border none
+      border-bottom 1px solid white
+      padding-left 5px
+
+      color white
+      font-family 'OratorStd'
+      font-size 14px
+      letter-spacing -3.2px
+
+      &:focus
+        outline none
+
+      &::placeholder
+        color $search-placeholder
+        text-transform uppercase
+        font-family 'OratorStd'
+        font-size 14px
+        letter-spacing -3.2px
+
+    button[type="submit"]
+      position absolute
+      right 0
+      top 3px
+      width 27px
+      height 27px
+      background-color transparent
+      padding 0
+      border none
+      cursor pointer
+
+      svg
+        width 100%
+        height 100%
+        path
+          fill $search-placeholder
+          transition fill .3s ease
+
+    input:valid + button svg path
+      fill white

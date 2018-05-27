@@ -42,7 +42,9 @@ gulp.task('default', ['styles', 'views'], function() {
 	// сервер для разработки
 	browserSync.init({
     server: {
-        baseDir: "./"
+        baseDir: "./",
+        open: false,
+        reloadOnRestart: true,
     }
   });
 });
