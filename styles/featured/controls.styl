@@ -1,56 +1,7 @@
-.slider-controls
-  position absolute
-
-  bottom 0px
-  left 90px
-
-  width 135px
-  height 40px
-
-  display flex
-  flex-flow row nowrap
-  justify-content space-between
-  align-items center
+.featured-products .slider-controls
+  bottom 0
 
   .arrow
-    height 12px
-    width 25px
-    position relative
-
-    cursor pointer
-    transition transform .3s ease
-
     &:before
     &:after
-      content ''
-      display block
-      background-color black
-      height 2px
-      position absolute
-
-    &:before
-      width 25px
-      top 5px
-
-    &:after
-      width 7px
-      top 2px
-
-    &.left
-      &:hover
-        transform translateX(-5px)
-      &:after
-        transform rotate(-45deg)
-        left 0
-    &.right
-      &:hover
-        transform translateX(5px)
-      &:after
-        transform rotate(45deg)
-        right 0
-
-  span
-    font-family 'OratorSTD'
-    font-size 40px
-    line-height 0
-    transform translateY(5px)
+      background black
