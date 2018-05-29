@@ -1,0 +1,10 @@
+mixin store(image, hours, active)
+  div(class="store " + active)
+    .shop-image
+      img(src=image)
+    
+    .backlayer
+      span Today #{hours}
+      
+      a.arrowed-link(href="#")
+        span Visit Store

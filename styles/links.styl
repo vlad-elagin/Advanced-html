@@ -50,3 +50,46 @@ nav.footer-nav
         width 100%
       &:after
         width 100%
+
+.arrowed-link
+  position absolute
+
+  color black
+  text-decoration none
+
+  transition transform .3s ease
+
+  &:hover
+    transform translateX(5px)
+
+  &:before
+  &:after
+    content ''
+    display block
+    background-color black
+    height 2px
+    position absolute
+
+  &:before
+    width 87%
+    top 50%
+    right 0
+
+  &:after
+    width 15%
+    top 40%
+    transform rotate(45deg)
+    right 0
+
+  span
+    position absolute
+    bottom 0px
+    right 0
+
+    font-family 'HalisR'
+    font-weight 300
+    font-size 14px
+    color black
+    line-height 12px
+
+    letter-spacing -0.3px

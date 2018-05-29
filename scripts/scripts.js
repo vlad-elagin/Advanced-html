@@ -41,6 +41,35 @@ rightBtn.addEventListener('click', function(e) {
   pickSmoothie(current + 1);
 });
 
+// stores slider
+var storeLeftBtn = document.querySelector('.map-wrapper .arrow.left');
+var storeRightBtn = document.querySelector('.map-wrapper .arrow.right');
+var storeCounter = document.querySelector('.map-wrapper .slider-controls span');
+
+var storeCurrent = 0;
+storeCounter.textContent = storeCurrent + 1;
+
+function pickStore(index) {
+  document.querySelector('.map-wrapper .store.active').classList.remove('active');
+  var store = document.querySelectorAll('.map-wrapper .store')[index];
+  store.classList.add('active');
+
+  storeCurrent = index;
+  storeCounter.textContent = storeCurrent + 1;
+}
+
+storeLeftBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  if (storeCurrent - 1 === -1) return;
+  pickStore(storeCurrent - 1);
+});
+
+storeRightBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  if (storeCurrent + 1 === 3) return;
+  pickStore(storeCurrent + 1);
+});
+
 // display recipes after animation playes
 var recipes = document.querySelectorAll('.recipe');
 setTimeout(function() {
