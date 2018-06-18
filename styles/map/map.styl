@@ -4,16 +4,76 @@
   top 0
   z-index 2
 
-  // temp
-  outline 1px solid red
-  background-color lighten(black, 25%)
-
   width 55%
   height 755px
 
+  background url(images/map.jpg) center center no-repeat
+  background-size 105% auto
   clip-path polygon(
     0 0,
     100% 40px,
     93% 100%,
     0 100%
   )
+
+  // markers
+  &-marker
+    position absolute
+
+    width 140px
+    height 50px
+
+    display flex
+    flex-direction column
+    align-items flex-start
+    justify-content flex-start
+
+    padding-left 55px
+    opacity 0
+    transition opacity .3s ease
+    &.active
+      opacity 1
+
+    span
+      font-family 'HalisR'
+      font-size 10px
+      color white
+      line-height 16px
+
+    &:before,
+    &:after
+      content ''
+      position absolute
+
+    &:before
+      background $store-backlayer
+      width 50px
+      height 50px
+      left 0
+      clip-path polygon(
+        3px 5px,
+        50px 2px,
+        46px 48px,
+        5px 47px
+      )
+
+    &:after
+      width 10px
+      height 10px
+      background lighten($search-bg, 15%)
+      left 21px
+      top 20px
+
+
+    // markers positions
+    &:first-of-type
+      left 20%
+      top 32%
+
+    &:nth-of-type(2)
+      left 40%
+      top 45%
+
+    &:last-of-type
+      left 70%
+      top 13%

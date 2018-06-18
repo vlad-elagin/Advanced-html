@@ -59,6 +59,10 @@ function pickStore(index) {
   var wrapper = document.querySelector('.stores-wrapper');
   wrapper.style.transform = 'translateX(' + positions[index] + 'px)';
 
+  document.querySelector('.map-marker.active').classList.remove('active');
+  var markers = document.querySelectorAll('.map-marker');
+  markers[index].classList.add('active');
+
   storeCurrent = index;
   storeCounter.textContent = storeCurrent + 1;
 }
