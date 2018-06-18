@@ -54,6 +54,11 @@ function pickStore(index) {
   var store = document.querySelectorAll('.map-wrapper .store')[index];
   store.classList.add('active');
 
+  var positions = [0, -340, -680];
+
+  var wrapper = document.querySelector('.stores-wrapper');
+  wrapper.style.transform = 'translateX(' + positions[index] + 'px)';
+
   storeCurrent = index;
   storeCounter.textContent = storeCurrent + 1;
 }
